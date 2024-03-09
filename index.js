@@ -20,7 +20,8 @@ function CreateBlogDiv(titleValue, contentValue, imageValue) {
     titleDiv.innerHTML = titleValue;
 
     const contentDiv = document.createElement("p");
-    contentDiv.innerHTML = contentValue;
+    contentDiv.innerHTML = contentValue.replace(/\n/g, "<br>")
+    // contentDiv.innerHTML = contentValue;
 
     newDiv.appendChild(titleDiv);
     const imageDiv = document.createElement("div");
