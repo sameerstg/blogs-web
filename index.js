@@ -15,17 +15,26 @@ function CreateBlog() {
 function CreateBlogDiv(titleValue, contentValue, imageValue) {
     const newDiv = document.createElement("div");
     newDiv.className = "blog";
-    parent.appendChild(newDiv);
+
     const titleDiv = document.createElement("h1");
     titleDiv.innerHTML = titleValue;
+
     const contentDiv = document.createElement("p");
     contentDiv.innerHTML = contentValue;
-    const imageDiv = imageValue? document.createElement("img") : null;
-    imageDiv.src = imageValue;
+
     newDiv.appendChild(titleDiv);
-    if (imageDiv) newDiv.appendChild(imageDiv);
+    const imageDiv = document.createElement("div");
+    imageDiv.className = "image";
+    // imageDiv.setAttribute("src", imageValue);
+    newDiv.appendChild(imageDiv);
+    if (imageValue) {
+    }
+
+
     newDiv.appendChild(contentDiv);
+
     parent.appendChild(newDiv);
+
     title.value = null;
     content.value = "";
     image.value = "";
